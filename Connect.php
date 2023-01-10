@@ -11,6 +11,7 @@ class Connect
     function __construct()
     {
         $this->a = new PDO(Connect::DBNAME, Connect::USERNAME, Connect::PASSWORD);
+
     }
 
     public function display_full_table($tablename)

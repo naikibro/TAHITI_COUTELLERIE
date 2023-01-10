@@ -1,7 +1,10 @@
 <?php
     require("Connect.php");
     require("Product.php");
+    require("Blocks.php");
+    session_start();
     $connection = new Connect();
+    $block = new Blocks();
 
 ?>
 
@@ -19,16 +22,17 @@
     <hr/>
     <br>
 
-    <button class="magicButton">
-        <a target="_blank" href="test.php">Ajouter un produit</a>
-    </button>
+    <?php
+        $block->login_form();
+        var_dump($_SESSION);
 
+        /*
+        session_unset();
+        session_destroy();*/
+    ?>
     <br>
     <br>
 
-    <button class="magicButton">
-        <a href="test.php">Supprimer un produit</a>
-    </button>
 
 
 </body>
